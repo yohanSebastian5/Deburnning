@@ -1,28 +1,23 @@
 import sequelize from '../connection.js'
 import { DataTypes } from 'sequelize'
+import User from './User.js'
 
-const User = sequelize.define('User', {
-  userId: {
+const Category = sequelize.define('Category', {
+  categoryId: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  names: {
+  categoryName: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  lastnames: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  email: {
-    type: DataTypes.STRING,
-    unique: true
-  },
-  password: {
+  categoryDescription: {
     type: DataTypes.STRING,
     allowNull: false
   }
-})
+}, { timestamps: false })
 
-export default User
+Category.belongsTo(User, { foreignKey: 'userId' })
+
+export default Category
