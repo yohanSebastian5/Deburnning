@@ -19,4 +19,6 @@ goalsRouter.get('/getGoal/:goalId', goalController.getGoalById)
 // route for deleting a goal by id
 goalsRouter.delete('/deleteGoal/:goalId', goalController.deleteGoal)
 
+// route for changing goal status
+goalsRouter.put('/changeStatus/:goalId', goalController.changeGoalStatus)
 export default goalsRouter

@@ -1,3 +1,4 @@
+import { GOAL_STATUSES } from '../../consts.js'
 import Goal from '../../models/Goal.js'
 import { manageError } from '../../utils.js'
 
@@ -112,6 +113,38 @@ export default class GoalController {
       })
 
       return res.status(200).json({ message: 'Meta eliminada' })
+    } catch (error) {
+      manageError(error, res)
+    }
+  }
+
+  changeGoalStatus = async (req, res) => {
+    const { goalId } = req.params
+    const { userId } = req.user
+
+    // validate data from request
+    if (!goalId || !userId) {
+      return res.status(400).json({ message: 'Faltan datos' })
+    }
+
+    try {
+      // get goal with the given id
+      const goal = await Goal.findOne({
+        where: { goalId, userId }
+      })
+
+      // if the requested goal is not found return 404 error
+      if (!goal) return res.status(404).json({ message: 'Logro no encontrado' })
+
+      console.log(goal)
+
+      // eslint-disable-next-line eqeqeq
+      const newGoalStatus = goal.goalStatusId == GOAL_STATUSES.achived ? GOAL_STATUSES.goal : GOAL_STATUSES.achived
+      // change goal status
+      goal.goalStatusId = newGoalStatus
+      await goal.save()
+
+      return res.status(200).json(goal)
     } catch (error) {
       manageError(error, res)
     }
