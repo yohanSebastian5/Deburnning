@@ -90,4 +90,25 @@ export default class GoalController {
       manageError(res, error)
     }
   }
+
+  deleteGoal = async (req, res) => {
+    const { goalId } = req.params
+    const { userId } = req.user
+
+    // validate data from request
+    if (!goalId || !userId) {
+      return res.status(400).json({ message: 'Faltan datos' })
+    }
+
+    try {
+      // delete goal with the given id
+      await Goal.destroy({
+        where: { goalId, userId }
+      })
+
+      return res.status(200).json({ message: 'Meta eliminada' })
+    } catch (error) {
+      manageError(res, error)
+    }
+  }
 }
