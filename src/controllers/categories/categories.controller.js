@@ -1,5 +1,5 @@
 import Category from '../../models/Category.js'
-import { manejoError } from '../../utils.js'
+import { manageError } from '../../utils.js'
 
 export default class CategoriesController {
   createCategory = async (req, res) => {
@@ -20,7 +20,7 @@ export default class CategoriesController {
       })
       res.status(200).json({ newCategory })
     } catch (error) {
-      manejoError(error, res)
+      manageError(error, res)
     }
   }
 
@@ -33,7 +33,7 @@ export default class CategoriesController {
       })
       res.status(200).json({ deletedCategory })
     } catch (error) {
-      manejoError(error, res)
+      manageError(error, res)
     }
   }
 
@@ -48,7 +48,7 @@ export default class CategoriesController {
       )
       res.status(200).json({ editedCategory })
     } catch (error) {
-      manejoError(error, res)
+      manageError(error, res)
     }
   }
 
@@ -57,7 +57,7 @@ export default class CategoriesController {
       const categories = await Category.findAll()
       res.status(200).json({ categories })
     } catch (error) {
-      manejoError(error, res)
+      manageError(error, res)
     }
   }
 
@@ -70,7 +70,7 @@ export default class CategoriesController {
       })
       res.status(200).json({ category })
     } catch (error) {
-      manejoError(error, res)
+      manageError(error, res)
     }
   }
 }

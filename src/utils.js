@@ -1,6 +1,4 @@
-export function manejoError (error, res) {
+export const manageError = (error, res) => {
   console.error(error)
-  res.status(500).json({
-    message: 'Error en el servidor'
-  })
+  return res.status(500).json({ message: 'Error en el servidor' })
 }
