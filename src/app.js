@@ -3,8 +3,6 @@ import sequelize from './connection.js'
 import morgan from 'morgan'
 import helmet from 'helmet'
 
-// routes importing
-
 // route importing
 import usersRouter from './routes/users/users.routes.js'
 import goalsRouter from './routes/goals/goals.routes.js'
@@ -38,7 +36,7 @@ app.use('/api/goals', (req, res, next) => {
 // Function to run the server and connect to the database
 const runServer = async () => {
   await sequelize.authenticate()
-  await sequelize.sync({ alter: true })
+  // await sequelize.sync({ force: true })
   app.listen(port, () => console.log(`Server running on port ${port}`))
 }
 

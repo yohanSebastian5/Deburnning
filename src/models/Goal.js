@@ -37,7 +37,12 @@ const Goal = sequelize.define('Goal', {
 // relationships
 
 // relation with GoalStatus with goal status as default value
-Goal.belongsTo(GoalStatus, { foreignKey: 'statusId', defaultValue: GOAL_STATUSES.goal })
+Goal.belongsTo(GoalStatus, {
+  foreignKey: {
+    name: 'goalStatusId',
+    defaultValue: GOAL_STATUSES.goal.toString()
+  }
+})
 Goal.belongsTo(Category, { foreignKey: 'categoryId' })
 Goal.belongsTo(User, { foreignKey: 'userId' })
 

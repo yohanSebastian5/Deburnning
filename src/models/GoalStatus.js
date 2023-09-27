@@ -9,9 +9,9 @@ const GoalStatus = sequelize.define('GoalStatus', {
     autoIncrement: true
   },
   statusDescription: {
-    type: DataTypes.ENUM(GOAL_STATUSES.achived, GOAL_STATUSES.goal),
+    type: DataTypes.ENUM(GOAL_STATUSES.achived.toString(), GOAL_STATUSES.goal.toString()),
     allowNull: false
   }
-}, { tableName: 'GoalStatuses' })
+})
 
 export default GoalStatus
