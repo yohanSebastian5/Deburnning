@@ -12,10 +12,7 @@ const Category = sequelize.define('Category', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  categoryDescription: {
-    type: DataTypes.STRING,
-    allowNull: false
-  }
+  categoryDescription: { type: DataTypes.STRING, defaultValue: 'Categoria sin descripción' }
 }, { timestamps: false })
 
 Category.belongsTo(User, { foreignKey: 'userId' })

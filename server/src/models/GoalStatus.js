@@ -1,5 +1,6 @@
 import sequelize from '../connection.js'
 import { DataTypes } from 'sequelize'
+import { GOAL_STATUSES } from '../consts.js'
 
 const GoalStatus = sequelize.define('GoalStatus', {
   statusId: {
@@ -8,9 +9,9 @@ const GoalStatus = sequelize.define('GoalStatus', {
     autoIncrement: true
   },
   statusDescription: {
-    type: DataTypes.STRING,
+    type: DataTypes.ENUM(GOAL_STATUSES.achived.toString(), GOAL_STATUSES.goal.toString()),
     allowNull: false
   }
-}, { tableName: 'GoalStatus' })
+})
 
 export default GoalStatus

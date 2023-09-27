@@ -1,5 +1,6 @@
 import sequelize from '../connection.js'
 import { DataTypes } from 'sequelize'
+import { GOAL_STATUSES } from '../consts.js'
 import GoalStatus from './GoalStatus.js'
 import Category from './Category.js'
 import User from './User.js'
@@ -33,7 +34,15 @@ const Goal = sequelize.define('Goal', {
   }
 })
 
-Goal.belongsTo(GoalStatus, { foreignKey: 'statusId' })
+// relationships
+
+// relation with GoalStatus with goal status as default value
+Goal.belongsTo(GoalStatus, {
+  foreignKey: {
+    name: 'goalStatusId',
+    defaultValue: GOAL_STATUSES.goal.toString()
+  }
+})
 Goal.belongsTo(Category, { foreignKey: 'categoryId' })
 Goal.belongsTo(User, { foreignKey: 'userId' })
 

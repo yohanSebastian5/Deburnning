@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'quicksand';
+        }
+
+        .container {
+            width: 50%;
+            height: 380px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border: 1px solid #fee;
+            margin-top: 5%;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-left: 47px;
+            width: 100%;
+            background-color: #ff9800;
+            height: 70px;
+            font-family: 'questrial';
+        }
+
+
+        .form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;       
+        }
+
+        .form input, select{
+            width: 250px;
+            height: 33px;
+            border-radius: 27px;
+            outline: none;
+            border: 1px solid #eee;
+            padding-left: 10px;
+        }
+
+        .form input:focus{
+            border: 1px solid #ff9800;
+        }
+
+        #submit{
+            border-radius: 10px;
+            background-color: #ff9800;
+            color: white;
+            cursor: pointer;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <a href=""><i class="fas fa-times"></i></a>
+            <h2>Nueva Meta</h2>
+        </header>
+
+        <form action="" class="form">
+            <div class="cont">
+            <div class="first-row">
+                <input type="text" placeholder="titulo">
+                <input type="text" placeholder="descripcion">
+            </div>
+            <div class="second-row">
+                <select name="" id="">
+                    <option value="">seleccione una categoria</option>
+                </select>
+                <input type="date" placeholder="deadline">
+            </div>
+            <div class="submit-cont">
+                <input type="submit" value="guardar" id="submit">
+            </div>
+            </div>
+
+        </form>
+    </main>
+</body>
+</html>
