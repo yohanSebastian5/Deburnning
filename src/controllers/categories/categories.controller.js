@@ -1,4 +1,5 @@
 import Category from '../../models/Category.js'
+import Goal from '../../models/Goal.js'
 import { manageError } from '../../utils.js'
 
 export default class CategoriesController {
@@ -41,6 +42,10 @@ export default class CategoriesController {
     const { categoryId } = req.params
     const { categoryName, categoryDescription } = req.body
 
+    const category = await Category.findOne({ where: { categoryId } })
+
+    if (!category) return res.status(404).json({ message: 'Categoria no encontrada' })
+
     try {
       const editedCategory = await Category.update(
         { categoryName, categoryDescription },
@@ -69,6 +74,20 @@ export default class CategoriesController {
         where: { categoryId }
       })
       res.status(200).json({ category })
+    } catch (error) {
+      manageError(error, res)
+    }
+  }
+
+  selectCategoryWithGoals = async (req, res) => {
+    const { categoryId } = req.params
+
+    try {
+      const category = await Category.findOne({
+        where: { categoryId }
+      })
+      const associatedGoals = await Goal.findAll({ where: { categoryId } })
+      res.status(200).json({ category, associatedGoals })
     } catch (error) {
       manageError(error, res)
     }

@@ -20,4 +20,7 @@ categoriesRouter.get('/selectCategories', objCategories.selectCategories)
 // route for selecting a category by id
 categoriesRouter.get('/selectCategory/:categoryId', objCategories.selectCategoryById)
 
+// route for selecting categories with associated goals
+categoriesRouter.get('/selectCategoryWithGoals/:categoryId', objCategories.selectCategoryWithGoals)
+
 export default categoriesRouter

@@ -37,6 +37,11 @@ export default class GoalController {
       return res.status(400).json({ message: 'Faltan datos' })
     }
 
+    const goal = await Goal.findOne({ where: { goalId, userId } })
+
+    // if the requested goal is not found return 404 error
+    if (!goal) return res.status(404).json({ message: 'Logro no encontrado' })
+
     try {
       // update goal with de given id
       const goal = await Goal.update({

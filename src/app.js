@@ -38,7 +38,7 @@ app.use('/api/goals', (req, res, next) => {
 // Function to run the server and connect to the database
 const runServer = async () => {
   await sequelize.authenticate()
-  // await sequelize.sync({ force: true })
+  await sequelize.sync({ alter: true })
   app.listen(port, () => console.log(`Server running on port ${port}`))
 }
 
