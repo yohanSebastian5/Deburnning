@@ -4,7 +4,7 @@ import { manageError } from '../../utils.js'
 
 export default class GoalController {
   createGoal = async (req, res) => {
-    const { goalTitle, goalDescription, deadline, categoryId } = req.body
+    const { goalTitle, goalDescription, deadline, categoryId, goalState } = req.body
     const { userId } = req.user
 
     // validate data from request
@@ -19,7 +19,8 @@ export default class GoalController {
         goalDescription,
         deadline,
         categoryId,
-        userId
+        userId,
+        goalStatusId: goalState ? GOAL_STATUSES.goal : GOAL_STATUSES.achived
       })
 
       return res.status(201).json(goal)
