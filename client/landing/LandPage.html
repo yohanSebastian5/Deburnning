@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/landPage.css">
+    <link rel="stylesheet" href="landPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4/dist/scrollreveal.min.js"></script><script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
-<body>
-    <main>
-        <section id="containerPuntos"">
+<body class="elemento">
+    <main class="elemento">
+        <section id="containerPuntos">
             <div  class="container">
                 <h1 >DeBurnning</h1>
                 <h2 >
@@ -21,24 +24,100 @@
                 </h2>
                 <h5>- Winston Churchill</h5>
             </div>
-           
+            <div class="iconarrow">
+                <a href="#containerWhat"> <i class="fa-solid fa-angles-down fa-beat-fade fa-xl" ></i></a>
+            </div>
         </section>
-        <i><a></a></i>
+
     </main>
 
 
-    <nav>
+    <nav id="navbar" >
         <div class="logo">
             <i >Logo</i> 
         </div>
         <ul class="menu">
-            <li><a href="#">¿Que es el burnout?</a></li>
-            <li><a href="#">Burnout y STEM</a></li>
-            <li><a href="#">¿Como me afecta?</a></li>
-            <li><a href="#">Como combatirlo</a></li>
+            <li><a href="#containerWhat">¿Que es el burnout?</a></li>
+            <li><a href="#containerSTEAM">Burnout y STEM</a></li>
+            <li><a href="#containerMy">¿Como me afecta?</a></li>
+            <li><a href="#containerList">Como combatirlo</a></li>
             <li><a href="#">App</a></li>
         </ul>
     </nav>
-    <script type="module" src="./index.js"></script>
+
+
+    <div  id="containerWhat" class="elemento containerSeccion seccion">
+        
+        <div class="containerElement">
+            <div class="containerText">
+                <h1>¿Qué es el burnout?</h1>
+                <p>El burnout, también conocido como "síndrome de desgaste laboral" o "agotamiento emocional", es un estado de
+                    agotamiento físico y mental que resulta de la exposición prolongada al estrés laboral  o academico crónico. Se caracteriza por sentirse emocionalmente agotado, 
+                    despersonalizado o cínico hacia el trabajo y/o estudio al experimentar una disminución en el rendimiento personal.
+                    El burnout no es simplemente sentirse cansado después de un día duro de trabajo, sino una respuesta prolongada y abrumadora al estrés laboral y/o academico constante.</p>
+                              
+            </div>
+ <img src="img/burnout_que.png"></img>
+        </div>
+       
+    </div>
+    <div class="elemento" id="containerSTEAM"  ></div>
+    <div  class="containerSeccion ">
+        <div  class="containerElement">
+            <img src="img/imgstem.png"></img>
+            <div class="containerT containerright">
+                <h1 class="title">¿Como afecta el burnout en carreras de STEM?</h1>
+                <p class="text">El burnout puede tener un impacto directo en la deserción de estudiantes en carreras STEM y IT. Los estudiantes de estas carreras a menudo 
+                 enfrentan altos niveles de estrés debido a la carga académica, las expectativas de rendimiento y la constante evolución del mercado. 
+                 El burnout puede conducir a una disminución del interés en los estudios, una sensación de abrumación constante y una disminución en el rendimiento
+                 académico. Además, el burnout puede hacer que los estudiantes pierdan la motivación para continuar en sus carreras y buscar alternativas menos
+                 estresantes. Por lo tanto, es esencial abordar el burnout de manera efectiva en este contexto para ayudar a los estudiantes a mantener su pasión por
+                 la tecnología y reducir la deserción en estas carreras.</p>
+
+        </div>
+            
+        </div>
+       
+    </div>   
+    <div id="containerMy" class="elemento containerSeccion">
+
+        
+        <div class="containerElement">
+            <div class="containerText" containerleft>
+                <h1>¿Cómo me puede afectar el burnout?</h1>
+        <p>El burnout puede tener un impacto significativo en tu vida y bienestar. Puede manifestarse en una variedad de formas, como fatiga crónica,
+    insomnio, irritabilidad, disminución de la concentración y problemas de salud física y mental. Además, el burnout puede afectar tus relaciones
+    personales y profesionales, disminuir tu satisfacción laboral y académica y conducir a una falta de motivación y sentido de logro en tu trabajo o estudios.</p>
+        </div>       
+    <img src="img/imgMeafecta.png"></img>
+        </div>
+       
+    </div>
+    <div class="containerSeccion elemento" id="containerList">
+        <div class="containerElement">
+            <div class="containerTitle">
+                <h1>Como combatir el burnout  </h1>
+            </div>
+       
+        <div class="containerlista elemento">
+            <div class="lista">
+                <ul>
+                    <li><div class="icon"><label><></label></div>Establecer límites en tu trabajo y aprender a decir "no" cuando sea necesario.</li>
+                    <li><div class="icon"><label>()</label></div> Practicar técnicas de manejo del estrés, como la meditación y la respiración profunda.</li>
+                    <li><div class="icon"><label>[]</label></div> Mantener un equilibrio entre trabajo y vida personal, dedicando tiempo a actividades recreativas y descanso.</li>
+                    <li><div class="icon"><label>{}</label></div> Fomentar la comunicación abierta en tu entorno laboral y buscar apoyo de colegas y supervisores.</li>
+                    <li><div class="icon"><label> &nbsp;;  </label></div> Establecer metas realistas y celebrar los logros.</li>
+                    <li><div class="icon"><label>=></label></div> Considerar la posibilidad de buscar ayuda profesional si experimentas síntomas graves de burnout.</li>
+                    <li><div class="icon"><label><=</label></div> Aprender a administrar el tiempo de manera eficaz y establecer prioridades en las tareas.</li>
+                    <li><div class="icon"><label> &lt;/&gt;</label></div> Usar la app Deburnning.</li>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>

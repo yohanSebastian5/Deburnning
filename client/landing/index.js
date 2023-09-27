@@ -15,3 +15,23 @@ VANTA.DOTS({
     spacing: 24.00,
     showLines: false
   })
+
+
+
+    ScrollReveal({reset : false}).reveal('.elemento', {
+        delay: 300,   
+        duration: 1000,  
+        origin: 'bottom',  
+        distance: '20px',  
+        easing: 'ease-in-out',  
+        reset: true    
+    });
+    ScrollReveal({}).reveal('.navbar', {
+        delay: 300,   
+        duration: 1000,  
+        origin: 'bottom',  
+        distance: '20px',  
+        easing: 'ease-in-out',  
+        reset: true    
+    });
+
