@@ -1,4 +1,4 @@
 export const GOAL_STATUSES = {
-  goal: 'goal',
-  achived: 'achived'
+  goal: '0',
+  achived: '1'
 }

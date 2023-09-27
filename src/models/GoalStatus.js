@@ -10,8 +10,7 @@ const GoalStatus = sequelize.define('GoalStatus', {
   },
   statusDescription: {
     type: DataTypes.ENUM(GOAL_STATUSES.achived, GOAL_STATUSES.goal),
-    allowNull: false,
-    defaultValue: GOAL_STATUSES.goal
+    allowNull: false
   }
 }, { tableName: 'GoalStatuses' })
 
