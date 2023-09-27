@@ -7,6 +7,7 @@ import helmet from 'helmet'
 import usersRouter from './routes/users/users.routes.js'
 import goalsRouter from './routes/goals/goals.routes.js'
 import categoriesRouter from './routes/categories/categories.routes.js'
+import chartRouter from './routes/chart/chart.routes.js'
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -32,6 +33,8 @@ app.use('/api/goals', (req, res, next) => {
   req.user = { userId: 1 }
   return next()
 }, goalsRouter)
+
+app.use('/api/chart', chartRouter)
 
 // Function to run the server and connect to the database
 const runServer = async () => {
